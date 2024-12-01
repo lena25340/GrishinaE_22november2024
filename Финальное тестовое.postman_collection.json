@@ -1,0 +1,214 @@
+{
+	"info": {
+		"_postman_id": "851d6f5b-3718-408c-99df-fc03605040ec",
+		"name": "Финальное тестовое",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34536243",
+		"_collection_link": "https://gold-station-838683.postman.co/workspace/%D0%A4%D0%B8%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9-%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82-%D0%BF%D0%BE-%D1%80%D1%83%D1%87%D0%BD%D0%BE%D0%BC%D1%83-%D1%82%D0%B5%D1%81~6dbf12a3-0189-4514-810f-41efae6353b9/collection/34536243-851d6f5b-3718-408c-99df-fc03605040ec?action=share&source=collection_link&creator=34536243"
+	},
+	"item": [
+		{
+			"name": "добавление товара",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Товар добавлен\", function(){\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"idCookie\":\"239827\",\"idProd\":\"249\",\"type\":\"add\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://www.sibdar-spb.ru/ajax/basketOrder.php",
+					"protocol": "https",
+					"host": [
+						"www",
+						"sibdar-spb",
+						"ru"
+					],
+					"path": [
+						"ajax",
+						"basketOrder.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "изменение количества товара (увеличение);",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Изменение количества товаров\", function(){\r",
+							"    pm.response.to.have.status(200);\r",
+							"}); "
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"idCookie\":\"252042\",\"idProd\":\"373\",\"type\":\"add\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://www.sibdar-spb.ru/ajax/basketOrder.php",
+					"protocol": "https",
+					"host": [
+						"www",
+						"sibdar-spb",
+						"ru"
+					],
+					"path": [
+						"ajax",
+						"basketOrder.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "удаление товара",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://mc.yandex.ru/watch/16301392/1?page-url=https%3A%2F%2Faltaivita.ru%2Fcategory%2Fnovinki%2F&charset=utf-8&uah=chu%0A%22Chromium%22%3Bv%3D%22128%22%2C%22Not%3BA%3DBrand%22%3Bv%3D%2224%22%2C%22YaBrowser%22%3Bv%3D%2224.10%22%2C%22Yowser%22%3Bv%3D%222.5%22%0Acha%0Ax86%0Achb%0A64%0Achf%0A24.10.3.825%0Achl%0A%22Chromium%22%3Bv%3D%22128.0.6613.186%22%2C%22Not%3BA%3DBrand%22%3Bv%3D%2224.0.0.0%22%2C%22YaBrowser%22%3Bv%3D%2224.10.3.825%22%2C%22Yowser%22%3Bv%3D%222.5%22%0Achm%0A%3F0%0Achp%0AWindows%0Achv%0A10.0.0&hittoken=1732608609_c8c9fee557d0e9abe6b7066f0573d415aa61b24e2b5afa316e5a62d74115dd19&browser-info=pa%3A1%3Aar%3A1%3Avf%3A14pwap7gbnncs44tf8xglmzmdcdb%3Afu%3A1%3Aen%3Autf-8%3Ala%3Aru%3Av%3A1530%3Acn%3A1%3Adp%3A1%3Als%3A625863341207%3Ahid%3A341253316%3Az%3A180%3Ai%3A20241126111051%3Aet%3A1732608651%3Ac%3A1%3Arn%3A337597918%3Arqn%3A135%3Au%3A173190086590325262%3Aw%3A1028x784%3As%3A1600x900x24%3Ask%3A1%3Awv%3A2%3Aco%3A0%3Acpf%3A1%3Aeu%3A0%3Ans%3A1732608608432%3Agi%3AR0ExLjEuMTY5NzM5NDA1My4xNzMxOTAwODY0%3Aadb%3A2%3Arqnl%3A1%3Ast%3A1732608651&t=gdpr(14)mc(p-1)clc(2-1148-147)rqnt(4)aw(1)ecs(0)cdl(na)eco(42533380)dss(2)ti(0)&force-urlencoded=1&site-info=%7B%22__ym%22%3A%7B%22ecommerce%22%3A%5B%7B%22remove%22%3A%7B%22products%22%3A%5B%7B%22name%22%3A%22%D0%9F%D0%BE%D0%B4%D0%B0%D1%80%D0%BE%D1%87%D0%BD%D1%8B%D0%B9%20%D0%BD%D0%B0%D0%B1%D0%BE%D1%80%20%5C%22%D0%A1%D1%83%D0%BD%D0%B4%D1%83%D1%87%D0%BE%D0%BA%20%D0%BC%D1%83%D0%B6%D1%81%D0%BA%D0%BE%D0%B3%D0%BE%20%D0%B7%D0%B4%D0%BE%D1%80%D0%BE%D0%B2%D1%8C%D1%8F%5C%22%2C%20750%20%D0%BC%D0%BB%20%D0%90%D0%BB%D1%82%D0%B0%D0%B9-%D0%A1%D0%B5%D0%BB%D0%B8%D0%B3%D0%BE%D1%80%22%2C%22id%22%3A%227130%22%2C%22price%22%3A%221171%22%2C%22brand%22%3A%22altaivita%22%2C%22category%22%3A%22%D0%9D%D0%B0%D0%B1%D0%BE%D1%80%D1%8B%22%2C%22quantity%22%3A%221%22%7D%5D%7D%7D%5D%7D%7D",
+					"protocol": "https",
+					"host": [
+						"mc",
+						"yandex",
+						"ru"
+					],
+					"path": [
+						"watch",
+						"16301392",
+						"1"
+					],
+					"query": [
+						{
+							"key": "page-url",
+							"value": "https%3A%2F%2Faltaivita.ru%2Fcategory%2Fnovinki%2F"
+						},
+						{
+							"key": "charset",
+							"value": "utf-8"
+						},
+						{
+							"key": "uah",
+							"value": "chu%0A%22Chromium%22%3Bv%3D%22128%22%2C%22Not%3BA%3DBrand%22%3Bv%3D%2224%22%2C%22YaBrowser%22%3Bv%3D%2224.10%22%2C%22Yowser%22%3Bv%3D%222.5%22%0Acha%0Ax86%0Achb%0A64%0Achf%0A24.10.3.825%0Achl%0A%22Chromium%22%3Bv%3D%22128.0.6613.186%22%2C%22Not%3BA%3DBrand%22%3Bv%3D%2224.0.0.0%22%2C%22YaBrowser%22%3Bv%3D%2224.10.3.825%22%2C%22Yowser%22%3Bv%3D%222.5%22%0Achm%0A%3F0%0Achp%0AWindows%0Achv%0A10.0.0"
+						},
+						{
+							"key": "hittoken",
+							"value": "1732608609_c8c9fee557d0e9abe6b7066f0573d415aa61b24e2b5afa316e5a62d74115dd19"
+						},
+						{
+							"key": "browser-info",
+							"value": "pa%3A1%3Aar%3A1%3Avf%3A14pwap7gbnncs44tf8xglmzmdcdb%3Afu%3A1%3Aen%3Autf-8%3Ala%3Aru%3Av%3A1530%3Acn%3A1%3Adp%3A1%3Als%3A625863341207%3Ahid%3A341253316%3Az%3A180%3Ai%3A20241126111051%3Aet%3A1732608651%3Ac%3A1%3Arn%3A337597918%3Arqn%3A135%3Au%3A173190086590325262%3Aw%3A1028x784%3As%3A1600x900x24%3Ask%3A1%3Awv%3A2%3Aco%3A0%3Acpf%3A1%3Aeu%3A0%3Ans%3A1732608608432%3Agi%3AR0ExLjEuMTY5NzM5NDA1My4xNzMxOTAwODY0%3Aadb%3A2%3Arqnl%3A1%3Ast%3A1732608651"
+						},
+						{
+							"key": "t",
+							"value": "gdpr(14)mc(p-1)clc(2-1148-147)rqnt(4)aw(1)ecs(0)cdl(na)eco(42533380)dss(2)ti(0)"
+						},
+						{
+							"key": "force-urlencoded",
+							"value": "1"
+						},
+						{
+							"key": "site-info",
+							"value": "%7B%22__ym%22%3A%7B%22ecommerce%22%3A%5B%7B%22remove%22%3A%7B%22products%22%3A%5B%7B%22name%22%3A%22%D0%9F%D0%BE%D0%B4%D0%B0%D1%80%D0%BE%D1%87%D0%BD%D1%8B%D0%B9%20%D0%BD%D0%B0%D0%B1%D0%BE%D1%80%20%5C%22%D0%A1%D1%83%D0%BD%D0%B4%D1%83%D1%87%D0%BE%D0%BA%20%D0%BC%D1%83%D0%B6%D1%81%D0%BA%D0%BE%D0%B3%D0%BE%20%D0%B7%D0%B4%D0%BE%D1%80%D0%BE%D0%B2%D1%8C%D1%8F%5C%22%2C%20750%20%D0%BC%D0%BB%20%D0%90%D0%BB%D1%82%D0%B0%D0%B9-%D0%A1%D0%B5%D0%BB%D0%B8%D0%B3%D0%BE%D1%80%22%2C%22id%22%3A%227130%22%2C%22price%22%3A%221171%22%2C%22brand%22%3A%22altaivita%22%2C%22category%22%3A%22%D0%9D%D0%B0%D0%B1%D0%BE%D1%80%D1%8B%22%2C%22quantity%22%3A%221%22%7D%5D%7D%7D%5D%7D%7D"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "token",
+			"value": "ElEiQ2hyb21pdW0iO3Y9IjEyOCIsICJOb3Q7QT1CcmFuZCI7dj0iMjQiLCAiWWFCcm93c2VyIjt2PSIyNC4xMCIsICJZb3dzZXIiO3Y9IjIuNSIaBSJ4ODYiIg0iMjQuMTAuNC43NTYiKgI/MDICIiI6CSJXaW5kb3dzIkIIIjEwLjAuMCJKBCI2NCJSaCJDaHJvbWl1bSI7dj0iMTI4LjAuNjYxMy4xODYiLCAiTm90O0E9QnJhbmQiO3Y9IjI0LjAuMC4wIiwgIllhQnJvd3NlciI7dj0iMjQuMTAuNC43NTYiLCAiWW93c2VyIjt2PSIyLjUiWgI/MGDUq6u6Bg==",
+			"type": "string"
+		}
+	]
+}
